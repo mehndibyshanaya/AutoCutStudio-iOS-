@@ -1,0 +1,28 @@
+
+name: AutoCutStudio
+
+options:
+  bundleIdPrefix: com.autocutstudio
+  deploymentTarget:
+    iOS: "16.0"
+
+targets:
+  AutoCutStudio:
+    type: application
+    platform: iOS
+
+    sources:
+      - path: AutoCutStudioApp.swift
+      - path: ContentView.swift
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.autocutstudio.app
+        PRODUCT_NAME: AutoCutStudio
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: AutoCut Studio
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: Select a video to cut into alternating clips.
+        INFOPLIST_KEY_UIFileSharingEnabled: true
+        INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace: true
+        GENERATE_INFOPLIST_FILE: YES
