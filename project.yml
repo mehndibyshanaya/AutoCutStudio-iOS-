@@ -14,13 +14,15 @@ targets:
     sources:
       - path: AutoCutStudioApp.swift
       - path: ContentView.swift
+      - path: LaunchScreen.storyboard
 
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.autocutstudio.app
         PRODUCT_NAME: AutoCutStudio
         SWIFT_VERSION: "5.9"
-        TARGETED_DEVICE_FAMILY: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
         INFOPLIST_KEY_CFBundleDisplayName: AutoCut Studio
         INFOPLIST_KEY_NSPhotoLibraryUsageDescription: Select a video to cut into alternating clips.
         INFOPLIST_KEY_UIFileSharingEnabled: true
