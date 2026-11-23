@@ -30,7 +30,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                background.ignoresSafeArea()
+                background
+                    .ignoresSafeArea()
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 26) {
                         header
@@ -159,6 +160,8 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(background.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(isPresented: $showEditor) {
                 editorScreen
@@ -223,7 +226,8 @@ struct ContentView: View {
 
     private var editorScreen: some View {
         ZStack {
-            background.ignoresSafeArea()
+            background
+                .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 20) {
                     HStack {
@@ -337,6 +341,8 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(background.ignoresSafeArea())
         .onAppear {
             if let inputURL {
                 previewPlayer = AVPlayer(url: inputURL)
@@ -348,7 +354,8 @@ struct ContentView: View {
     }
 
     private var previewHeight: CGFloat {
-        min(max(UIScreen.main.bounds.width * 0.52, 190), 360)
+        let availableWidth = UIScreen.main.bounds.width - (horizontalPadding * 2)
+        return min(max(availableWidth * 0.56, 170), 420)
     }
 
     private func durationControl(title: String, value: Binding<Double>, tint: Color) -> some View {

@@ -3,6 +3,8 @@
 This is a native SwiftUI iPhone implementation of the supplied Windows app's core alternating-cut logic.
 
 ## Included
+- Full-window SwiftUI layout with a launch storyboard for modern iPhone and iPad sizing.
+- Responsive content width and scrolling on supported device sizes.
 - Import a video from Photos using the iOS photo picker.
 - Set independent keep and remove durations (0.1–30 seconds each; defaults: keep 3 seconds, remove 1 second).
 - Keep-first mode: keep the configured duration, remove the configured duration, then repeat.
